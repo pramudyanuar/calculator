@@ -1,0 +1,27 @@
+.calculator {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.result {
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 20px;
+  width: 23%;
+}
+
+.btn-extend {
+  font-size: 20px;
+  width: 100%;
+}
+
+.btn-row {
+  margin-bottom: 10px;
+}

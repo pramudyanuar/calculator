@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <div class="row pt-5">
+          <div class="col-12">
+              <div class="calculator">
+                  <div class="result" id="result">0</div>
+                  <div class="btn-row">
+                      <button class="btn btn-primary" onclick="appendToResult('7')">7</button>
+                      <button class="btn btn-primary" onclick="appendToResult('8')">8</button>
+                      <button class="btn btn-primary" onclick="appendToResult('9')">9</button>
+                      <button class="btn btn-primary" onclick="clearResult()">C</button>
+                  </div>
+                  <div class="btn-row">
+                      <button class="btn btn-primary" onclick="appendToResult('4')">4</button>
+                      <button class="btn btn-primary" onclick="appendToResult('5')">5</button>
+                      <button class="btn btn-primary" onclick="appendToResult('6')">6</button>
+                      <button class="btn btn-primary" onclick="appendToResult('+')">+</button>
+                  </div>
+                  <div class="btn-row">
+                      <button class="btn btn-primary" onclick="appendToResult('1')">1</button>
+                      <button class="btn btn-primary" onclick="appendToResult('2')">2</button>
+                      <button class="btn btn-primary" onclick="appendToResult('3')">3</button>
+                      <button class="btn btn-primary" onclick="appendToResult('-')">-</button>
+                  </div>
+                  <div class="btn-row">
+                      <button class="btn btn-primary" onclick="appendToResult('0')">0</button>
+                      <button class="btn btn-primary" onclick="appendToResult('.')">.</button>
+                      <button class="btn btn-primary" onclick="appendToResult('*')">*</button>
+                      <button class="btn btn-primary" onclick="appendToResult('/')">/</button>
+                  </div>
+                  <div class="btn-row">
+                      <button class="btn btn-primary btn-extend" onclick="calculate()">=</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+      let result = document.getElementById('result');
+      let currentInput = '';
+
+      function appendToResult(value) {
+          currentInput += value;
+          result.textContent = currentInput;
+      }
+
+      function clearResult() {
+          currentInput = '';
+          result.textContent = '0';
+      }
+
+      function calculate() {
+          try {
+              currentInput = eval(currentInput).toString();
+              result.textContent = currentInput;
+          } catch (error) {
+              result.textContent = 'Error';
+          }
+      }
+    </script>
+
+</body>
+</html>
